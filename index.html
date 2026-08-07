@@ -1027,6 +1027,36 @@
                             <span>jenishj436@gmail.com</span>
                         </a>
                     </div>
+
+                    <!-- Coding Journey Card -->
+                    <div class="coding-journey-card">
+                        <div class="cj-left">
+                            <div class="cj-icon-wrap">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="2" y="3" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/>
+                                    <polyline points="8 10 5 13 8 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="16 10 19 13 16 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <line x1="12" y1="8" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" transform="rotate(-15 12 13)"/>
+                                </svg>
+                            </div>
+                            <div class="cj-label-block">
+                                <span class="cj-title">CODING JOURNEY</span>
+                                <span class="cj-subtitle">DSA Practice</span>
+                            </div>
+                        </div>
+                        <div class="cj-divider"></div>
+                        <div class="cj-stats">
+                            <div class="cj-stat">
+                                <span class="cj-stat-num">150+</span>
+                                <span class="cj-stat-label">LeetCode</span>
+                            </div>
+                            <div class="cj-stat">
+                                <span class="cj-stat-num">200+</span>
+                                <span class="cj-stat-label">TUF / Striver</span>
+                            </div>
+                        </div>
+                        <p class="cj-footer-text">Focused on problem solving, algorithms, and core CS fundamentals.</p>
+                    </div>
                 </div>
             </section>
 
@@ -1465,13 +1495,23 @@
         const progressBarFill = document.querySelector('.progress-bar-fill');
         const checkpoints = document.querySelectorAll('.checkpoint');
 
+        // Detect CSS scroll-driven animation support — if supported, CSS handles the fill width
+        const supportsScrollTimeline = CSS.supports('animation-timeline', 'scroll()');
+
         function updateProgressBar() {
             const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            // Use the larger of both scroll heights (body padding can skew one of them)
+            const documentHeight = Math.max(
+                document.documentElement.scrollHeight,
+                document.body.scrollHeight
+            ) - windowHeight;
             const scrolled = window.scrollY;
             const progress = Math.min(100, Math.max(0, (scrolled / documentHeight) * 100));
 
-            if (progressBarFill) progressBarFill.style.width = progress + '%';
+            // Only drive fill width via JS if CSS scroll-driven animation isn't supported
+            if (progressBarFill && !supportsScrollTimeline) {
+                progressBarFill.style.width = progress + '%';
+            }
 
             const sections = ['hero', 'blueprint', 'toolbox', 'projects', 'hackathons', 'experience', 'connect'];
             let activeIndex = 0;
@@ -1511,3 +1551,4 @@
     </script>
 </body>
 </html>
+

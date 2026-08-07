@@ -240,6 +240,23 @@ body[data-theme="dark"] {
   border-right: 4px solid var(--border);
 }
 
+/* CSS scroll-driven animation — frame-perfect, no JS needed in modern browsers */
+@supports (animation-timeline: scroll()) {
+  .progress-bar-fill {
+    animation: progressGrow linear;
+    animation-timeline: scroll(root);
+    animation-fill-mode: both;
+    /* Disable JS-driven transition so CSS animation wins */
+    transition: none;
+    width: 0%;
+  }
+
+  @keyframes progressGrow {
+    from { width: 0%; }
+    to   { width: 100%; }
+  }
+}
+
 .progress-checkpoints {
   position: absolute;
   top: 0;
@@ -4126,3 +4143,220 @@ body[data-theme="dark"] .growth-card {
   }
 }
 
+/* ============================================================
+   Coding Journey Card (CONNECT section)
+   Neo-brutalist style — compact, recruiter-friendly
+   ============================================================ */
+
+.coding-journey-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 0 1.25rem;
+  background: var(--white);
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem 0.85rem;
+  margin-top: 1.75rem;
+  transition: transform 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.22s ease;
+  cursor: default;
+  overflow: hidden;
+}
+
+/* Thin yellow stripe on the left edge */
+.coding-journey-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--yellow);
+  border-radius: 7px 0 0 7px;
+}
+
+.coding-journey-card:hover {
+  transform: translate(-3px, -4px);
+  box-shadow: 8px 9px 0 var(--border);
+}
+
+/* Left: icon + label block */
+.cj-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.cj-icon-wrap {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--cyan);
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0 var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.cj-label-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.cj-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.55;
+  line-height: 1.2;
+}
+
+.cj-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* Vertical divider */
+.cj-divider {
+  width: 2px;
+  height: 40px;
+  background: var(--border);
+  opacity: 0.2;
+  border-radius: 2px;
+  grid-column: 2;
+  grid-row: 1;
+  flex-shrink: 0;
+}
+
+/* Right: stat pills */
+.cj-stats {
+  display: flex;
+  gap: 1rem;
+  grid-column: 3;
+  grid-row: 1;
+  align-items: center;
+}
+
+.cj-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.cj-stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000;
+  background: var(--yellow);
+  border: 2px solid var(--border);
+  box-shadow: 2px 2px 0 var(--border);
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+  line-height: 1.4;
+}
+
+.cj-stat-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text);
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Footer text spanning all columns */
+.cj-footer-text {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  font-family: 'Caveat', cursive;
+  font-size: 0.92rem;
+  color: var(--text);
+  opacity: 0.6;
+  margin-top: 0.65rem;
+  padding-top: 0.6rem;
+  border-top: 1.5px dashed var(--border);
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Dark mode overrides */
+body[data-theme="dark"] .coding-journey-card {
+  background: var(--white);
+  border-color: var(--border);
+  box-shadow: 5px 5px 0 var(--border);
+}
+
+body[data-theme="dark"] .coding-journey-card::before {
+  background: var(--secondary);
+}
+
+body[data-theme="dark"] .cj-icon-wrap {
+  background: var(--primary);
+}
+
+body[data-theme="dark"] .cj-stat-num {
+  background: var(--secondary);
+  border-color: var(--border);
+  box-shadow: 2px 2px 0 var(--border);
+  color: #000;
+}
+
+body[data-theme="dark"] .cj-title,
+body[data-theme="dark"] .cj-subtitle {
+  color: var(--text);
+}
+
+body[data-theme="dark"] .cj-stat-label,
+body[data-theme="dark"] .cj-footer-text {
+  color: var(--text);
+}
+
+/* Responsive — stack on mobile */
+@media (max-width: 600px) {
+  .coding-journey-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.75rem 0;
+  }
+
+  .cj-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cj-divider {
+    display: none;
+  }
+
+  .cj-stats {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+    gap: 1.25rem;
+  }
+
+  .cj-footer-text {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
