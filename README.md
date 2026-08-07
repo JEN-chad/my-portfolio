@@ -1,10 +1,6 @@
-# marjoballabani.me
+# Jenish J Portfolio
 
-A neo-brutalist personal portfolio built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies - just raw code with bold design choices.
-
-This is a personal fun project, not a production template. The code prioritizes creativity and experimentation over best practices. It's a playground for trying out ideas, animations, and interactions - not a reference architecture.
-
-**[Live Site](https://marjoballabani.me)**
+A neo-brutalist personal portfolio for **Jenish J** (AI Systems Engineer & Full-Stack Developer) built with vanilla HTML, CSS, and JavaScript. Bold design choices, rich micro-animations, interactive journey map, engineering case studies, and interactive terminal resume.
 
 ## What is Neo-Brutalism?
 
