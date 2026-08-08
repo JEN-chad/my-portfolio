@@ -831,7 +831,11 @@ ${this.wrapWithColor("   Category: AI & Data Solutions", "#a8e6cf")}
    Issuer: Infosys | Category: Artificial Intelligence
    ${this.wrapWithColor("Completed foundational learning in artificial intelligence concepts.", "#ffffff")}
 
-<span style="color: #66d9ef;">7. GUVI Oracle SQL</span>
+<span style="color: #ff6b9d;">7. Fundamentals of Java</span>
+   Issuer: Test Yantra | Category: Programming Fundamentals
+   ${this.wrapWithColor("Completed a Short Term Training Programme focused on Java programming fundamentals, OOP concepts, and problem solving.", "#ffffff")}
+
+<span style="color: #66d9ef;">8. GUVI Oracle SQL</span>
    Issuer: GUVI | Category: Database
    ${this.wrapWithColor("Developed SQL and relational database fundamentals.", "#ffffff")}`;
 

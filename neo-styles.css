@@ -4011,6 +4011,14 @@ body[data-theme="dark"] .credential-card {
   opacity: 0.9;
 }
 
+.fa-java {
+  color: #ff5722 !important;
+  font-size: 1.2em;
+  vertical-align: -1px;
+  filter: drop-shadow(0 0 4px rgba(255, 87, 34, 0.4));
+  opacity: 1 !important;
+}
+
 .credential-desc {
   font-size: 0.9rem;
   line-height: 1.45;
