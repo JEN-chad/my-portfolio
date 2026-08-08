@@ -1037,15 +1037,16 @@ ${this.wrapWithColor("🚀 Open for roles:", "#a8e6cf")} Software Engineer, AI E
         category: "AI Learning Assistant",
         technologies: ["RAG", "Python", "LLMs", "Vector DB"],
         highlights: ["RAG PDF assistant", "Smart semester study prep"],
-        repo: "https://github.com/JEN-chad",
+        repo: "https://github.com/JEN-chad/ai-notes-maker.git",
+        demo: "https://semsmart.vercel.app/",
       },
       {
-        title: "HealVision AI",
-        description: "AI-based diabetic foot ulcer detection system using deep learning.",
-        category: "Deep Learning Computer Vision",
-        technologies: ["Python", "Computer Vision", "Deep Learning", "PyTorch"],
-        highlights: ["Diabetic foot ulcer detection", "Medical imaging AI"],
-        repo: "https://github.com/JEN-chad",
+        title: "OncoEnv",
+        description: "A reinforcement learning environment for simulating cancer treatment strategies and optimizing AI-driven clinical decisions.",
+        category: "Reinforcement Learning Environment",
+        technologies: ["Python", "Reinforcement Learning", "Gym/Gymnasium", "PyTorch"],
+        highlights: ["Cancer treatment simulation", "Clinical decision optimization"],
+        repo: "https://github.com/JEN-chad/OncoEnv.git",
       }
     ];
   }
