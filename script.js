@@ -1005,7 +1005,8 @@ ${this.wrapWithColor("🚀 Open for roles:", "#a8e6cf")} Software Engineer, AI E
           "Supports analysis across 7+ programming languages",
           "Reduced security review time to under 1 second"
         ],
-        repo: "https://github.com/JEN-chad",
+        repo: "https://github.com/JEN-chad/vibe-tools",
+        pypi: "https://pypi.org/project/codesentry/",
       },
       {
         title: "SupportDesk",
